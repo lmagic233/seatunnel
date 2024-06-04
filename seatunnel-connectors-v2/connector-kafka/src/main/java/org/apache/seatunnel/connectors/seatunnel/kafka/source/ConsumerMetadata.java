@@ -32,6 +32,10 @@ import java.util.Properties;
 public class ConsumerMetadata implements Serializable {
 
     private String topic;
+    private String jdqClientId;
+    private String jdqAppDomain;
+    private String jdqPassword;
+
     private boolean isPattern = false;
     private String bootstrapServers;
     private Properties properties;

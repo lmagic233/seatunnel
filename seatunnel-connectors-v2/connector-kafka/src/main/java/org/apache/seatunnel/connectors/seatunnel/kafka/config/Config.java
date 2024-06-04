@@ -47,6 +47,12 @@ public class Config {
                     .withDescription(
                             "Kafka topic name. If there are multiple topics, use , to split, for example: \"tpc1,tpc2\".");
 
+    public static final Option<String> JDQ_CLIENT_ID = Options.key("jdq.client-id").stringType().noDefaultValue();
+
+    public static final Option<String> JDQ_APP_DOMAIN = Options.key("jdq.app-domain").stringType().noDefaultValue();
+
+    public static final Option<String> JDQ_PASSWORD = Options.key("jdq.password").stringType().noDefaultValue();
+
     public static final Option<Boolean> PATTERN =
             Options.key("pattern")
                     .booleanType()
@@ -174,7 +180,7 @@ public class Config {
     public static final Option<KafkaSemantics> SEMANTICS =
             Options.key("semantics")
                     .enumType(KafkaSemantics.class)
-                    .defaultValue(KafkaSemantics.NON)
+                    .defaultValue(KafkaSemantics.AT_LEAST_ONCE)
                     .withDescription(
-                            "Semantics that can be chosen EXACTLY_ONCE/AT_LEAST_ONCE/NON, default NON.");
+                            "Semantics that can be chosen EXACTLY_ONCE/AT_LEAST_ONCE/NON, default AT_LEAST_ONCE.");
 }
